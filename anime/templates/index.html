@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}アニメ! GO!{% endblock %}
+
+    {% block contents %}
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <!-- Page heading-->
+                        <h1 class="mb-5">好きなアニメを見つけよう！</h1>
+                        <p>
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'anime:post' %}" class="btn btn-primary my-2">投稿する</a>
+                            <a href="{% url 'accounts:logout' %}" class="btn btn-secondary my-2">ログアウト</a>
+                            {% else %}
+                            <a href="{% url 'accounts:signup' %}" class="btn btn-primary my-2">今すぐサインアップ</a>
+                            <a href="{% url 'accounts:login' %}" class="btn btn-secondary my-2">登録済みの方はログイン</a>
+                            {% endif %}
+                        </p>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% include "photos_list.html" %}
+    {% include "pagination.html" %}
+    {% endblock %}
+

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}アニメ! GO! -- ログアウト{% endblock %}
+    {% block contents %}
+    <div classs="container">
+        <div class="row">
+            <div class="col offset-3 py-4">
+                <br>
+                <h3>ログアウトしました</h3>
+                <br>
+                <p><a href="{% url 'anime:index' %}">トップページへ</a><p>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
